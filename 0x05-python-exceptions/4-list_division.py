@@ -4,17 +4,15 @@ def list_division(my_list_1, my_list_2, list_length):
     for num in range(0, list_length):
         try:
             res = my_list_1[num] / my_list_2[num]
-            new_list.append(res)
         except ZeroDivisionError:
             print("division by 0")
-            new_list.append(0)
-            continue
+            res = 0
         except TypeError:
             print("wrong type")
-            new_list.append(0)
-            continue
+            res = 0
         except IndexError:
             print("out of range")
-            new_list.append(0)
-            continue
+            res = 0
+        finally:
+            new_list.append(res)
     return new_list
