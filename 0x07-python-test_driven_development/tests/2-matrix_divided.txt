@@ -1,0 +1,82 @@
+
+=================================
+The ``2-matrix_divided module``
+==================================
+
+Usage:
+---------
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+case 1: functions returns a new matrix when matrix is a list of
+	int lists and div is a float or int not 0
+
+	>>> matrix = [
+	...     [1, 2, 3],
+ 	...     [4, 5, 6]
+	... ]
+
+	>>> print(matrix_divided(matrix, 3))
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	>>> matrix = [
+        ...     [1, -2, 3.0],
+        ...     [4, 5, 6]
+        ... ]
+
+        >>> print(matrix_divided(matrix, 3))
+        [[0.33, -0.67, 1.0], [1.33, 1.67, 2.0]]
+
+case 2: function raises TypeError exception when matrix is not a list of lists
+
+	>>> matrix = [
+        ...     1,
+        ...     [4, 5, 6]
+        ... ]
+
+        >>> print(matrix_divided(matrix, 3))
+        Traceback (most recent call last):
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix = [
+        ...     ["w", 2, 3],
+        ...     [4, 5, 6]
+        ... ]
+
+        >>> print(matrix_divided(matrix, 3))
+        Traceback (most recent call last):
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+case 3: function raises TypeError exception when the list do not have same size
+
+	>>> matrix = [
+        ...     [1, 3],
+        ...     [4, 5, 6]
+        ... ]
+
+        >>> print(matrix_divided(matrix, 3))
+        Traceback (most recent call last):
+        TypeError: Each row of the matrix must have the same size
+
+case 4: functions raises TypeError when div is not  number
+
+	>>> matrix = [
+        ...     [2, 2, 3],
+        ...     [4, 5, 6]
+        ... ]
+
+        >>> print(matrix_divided(matrix, "hello"))
+        Traceback (most recent call last):
+        TypeError: div must be a number
+
+case 5: function raises ZeroDivisionError if div is o
+
+	>>> matrix = [
+        ...     [2, 2, 3],
+        ...     [4, 5, 6]
+        ... ]
+
+        >>> print(matrix_divided(matrix, 0))
+        Traceback (most recent call last):
+        ZeroDivisionError: division by zero
+
