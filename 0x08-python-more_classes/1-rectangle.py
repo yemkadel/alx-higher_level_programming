@@ -5,6 +5,12 @@
 
 class Rectangle:
     """ This class defines a Rectangle """
+
+    def __init__(self, width=0, height=0):
+        """ constructor for the rectangle class """
+        self.__width = width
+        self.__height = height
+
     @property
     def width(self):
         """ getter method for width """
@@ -32,8 +38,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def __init__(self, width=0, height=0):
-        """ constructor for the rectangle class """
-        self.__width = width
-        self.__height = height
