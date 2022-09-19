@@ -6,4 +6,3 @@
 class Rectangle:
     """ This class defines a Rectangle """
     pass
-
