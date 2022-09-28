@@ -9,7 +9,7 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """ this function returns a dict representation of a student """
         if (type(attrs) == list and
                 all(type(item) == str for item in attrs)):
