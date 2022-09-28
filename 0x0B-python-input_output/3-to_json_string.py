@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python3i
+import json
 """ This module is about json to string. """
 
 
