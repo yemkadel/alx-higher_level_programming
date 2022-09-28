@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" The module is about io and json """
+""" The module is about io and json. """
 import sys
 
 
