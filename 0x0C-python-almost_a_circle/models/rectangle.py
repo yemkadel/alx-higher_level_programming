@@ -77,7 +77,9 @@ class Rectangle(Base):
         return (self.__width * self.__height)
 
     def display(self):
+        [print("") for y in range(0, self.__y)]
         for col in range(0, self.__height):
+            [print(" ", end="") for x in range(0, self.__x)]
             for row in range(0, self.__width):
                 print("#", end="")
             print("")
@@ -87,3 +89,40 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                                                        self.__y, self.__width,
                                                        self.__height)
+
+    def update(self, *args, **kwargs):
+        """ this function updates the attributes of a rectangle """
+        if args and len(args) != 0:
+            for i in range(0, len(args)):
+                if i == 0:
+                    if args[i] is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = args[i]
+                elif i == 1:
+                    self.width = args[i]
+                elif i == 2:
+                    self.height = args[i]
+                elif i == 3:
+                    self.x = args[i]
+                elif i == 4:
+                    self.y = args[i]
+                else:
+                    return
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+                else:
+                    return
