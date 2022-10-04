@@ -5,6 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """ This class defines a Rectangle model """
+
     @property
     def width(self):
         """ the getter method for width """
@@ -66,6 +67,7 @@ class Rectangle(Base):
             self.__y = value
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ this is the constructor for this class """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -77,6 +79,7 @@ class Rectangle(Base):
         return (self.__width * self.__height)
 
     def display(self):
+        """ this function displays the class in a special way """
         [print("") for y in range(0, self.__y)]
         for col in range(0, self.__height):
             [print(" ", end="") for x in range(0, self.__x)]
@@ -128,6 +131,7 @@ class Rectangle(Base):
                     return
 
     def to_dictionary(self):
+        """ this function prints attributes of the class in json """
         return {
                 "id": self.id,
                 "width": self.width,
