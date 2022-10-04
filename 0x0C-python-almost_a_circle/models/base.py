@@ -4,6 +4,7 @@
 
 class Base:
     """ This class defines the Base class """
+
     __nb_objects = 0
     def __init__(self, id=None):
         """ This is the constructor of the base class """
