@@ -9,6 +9,7 @@ class Square(Rectangle):
     it inherits properties from the Rectangle class
     """
     def __init__(self, size, x=0, y=0, id=None):
+        """ this is the constructor for this class """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -25,6 +26,7 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        """ this is the setter method """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -33,6 +35,7 @@ class Square(Rectangle):
             self.width = value
 
     def update(self, *args, **kwargs):
+        """this function updates the att of a square """
         if args and len(args) != 0:
             for i in range(0, len(args)):
                 if i == 0:
@@ -63,6 +66,7 @@ class Square(Rectangle):
                     self.y = v
 
     def to_dictionary(self):
+        """ this function prints json representation of the square """
         return {
                 "id": self.id,
                 "size": self.size,
