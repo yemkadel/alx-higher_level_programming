@@ -34,3 +34,11 @@ class Base:
             else:
                 newList = [obj.to_dictionary() for obj in list_objs]
                 newFile.write(Base.to_json_string(newList))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ this function returns a iist of JSON STRINGS """
+        if json_string is None or json_string == "[]":
+            return []
+        else:
+            return json.loads(json_string)
