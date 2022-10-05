@@ -59,9 +59,11 @@ class Base:
     def load_from_file(cls):
         """ this function returns a list of instances """
         try:
-            with open("{}.json".format(cls.__name__), "r", encoding="utf-8") as clsFile:
+            with open("{}.json".format(cls.__name__),
+                      "r", encoding="utf-8") as clsFile:
                 strInstances = clsFile.read()
-                newList = [cls.create(**inst) for inst in Base.from_json_string(strInstances)]
+                newList = [cls.create(**inst)
+                           for inst in Base.from_json_string(strInstances)]
                 return newList
         except IOError:
             return []
@@ -94,7 +96,7 @@ class Base:
                     field_names = ["id", "size", "x", "y"]
                 new_dicts = csv.DictReader(csv_file, fieldnames=field_names)
                 new_dicts = [dict([k, int(v)] for k, v in d.items())
-                              for d in new_dicts]
+                             for d in new_dicts]
                 return [cls.create(**d) for d in new_dicts]
         except IOError:
             return []
